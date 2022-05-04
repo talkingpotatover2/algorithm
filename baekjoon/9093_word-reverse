@@ -27,7 +27,7 @@ public class StringReverse {
 			num--;
 			
 	         
-		//시간초과 <- 더 줄이기..
+	//시간초과 <- 더 줄이기..
 //         String[] arr = text.split(" ");  //문장 단어마다 분리
 //         for(int i=0; i<arr.length; i++) {  //단어 st에 넣는 반복문
 //            for(int j=arr[i].length()-1; j>=0; j--) {
