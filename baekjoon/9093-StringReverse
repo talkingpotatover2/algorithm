@@ -1,0 +1,79 @@
+package com.baekjoon;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Stack;
+
+public class StringReverse {
+
+	public static void main(String[] args) throws IOException {
+		Stack st = new Stack();  //단어 넣어줄 스택
+		char c = ' ';
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int num = Integer.parseInt(br.readLine());  //문장 개수 입력받기
+      
+		while(num != 0) {
+			String text = br.readLine();  //문장 입력받기
+			for(int j=text.length()-1; j>=0; j--) {
+				c = text.charAt(j);  //word 글자수마다 전부 charAt 해서 대입
+				//빈칸을 기준으로 단어를 구분해서 뒤집고싶음...
+				st.push(c);  //st에 넣어줌
+				if(c == ' ') {
+					
+				}
+				System.out.print(st.pop());
+			}
+         
+			num--;
+			
+	         
+		//시간초과 <- 더 줄이기..
+//         String[] arr = text.split(" ");  //문장 단어마다 분리
+//         for(int i=0; i<arr.length; i++) {  //단어 st에 넣는 반복문
+//            for(int j=arr[i].length()-1; j>=0; j--) {
+//               c = arr[i].charAt(j);  //word 글자수마다 전부 charAt 해서 대입
+//               st.push(c);  //st에 넣어줌
+//               System.out.print(st.pop());
+//            }
+//            System.out.print(" ");
+//         }
+//         System.out.println();
+//         
+//         num--;
+         
+         //시간초과 <- 반복문 줄이기
+//         for(int i=0; i<arr.length; i++) {  //단어 st에 넣는 반복문
+//            for(int j=0; j<arr[i].length(); j++) {
+//               c = arr[i].charAt(j);  //word 글자수마다 전부 charAt 해서 대입
+//               st.push(c);  //st에 넣어줌
+//            }
+//            for(int j=0; j<arr[i].length(); j++) {
+//               System.out.print(st.pop());
+//            }
+//            System.out.print(" ");
+//         }
+//         System.out.println();
+         
+         
+         //문장 전체 뒤집기(반복문 줄인 버전)
+//         for(int j=text.length()-1; j>=0; j--) {
+//            c = text.charAt(j);  //word 글자수마다 전부 charAt 해서 대입
+//            st.push(c);  //st에 넣어줌
+//            System.out.print(st.pop());
+//         }
+         
+         
+         //문장 전체를 뒤집음
+//         for(int i=0; i<arr.length; i++) {
+//            for(int j=arr[i].length()-1; j>=0; j--) {
+//               System.out.print(st.pop());
+//            }
+//         }
+//         System.out.println();
+         
+      }
+   }
+
+}
