@@ -3,6 +3,7 @@ package com.baekjoon;
 import java.util.Scanner;
 import java.util.Stack;
 
+//시간초과로 실패
 public class StackTest {
 	public static void main(String[] args) {
 		StackCheck stc = new StackCheck();
