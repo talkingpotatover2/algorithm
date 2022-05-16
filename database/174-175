@@ -1,1 +1,25 @@
-ㅇ
+-- 1
+select empno, RPAD(substr(empno,1,2),4,'*') as MASKING_EMPNO, 
+       ename, RPAD(substr(ename,1,1),5,'*') as MASKING_ENAME
+from emp
+where length(ename) = 5;
+
+-- 2
+select empno, ename, sal, trunc(sal/21.5,2) as DAY_PAY, round(sal/21.5/8,1) as TIME_PAY
+from emp;
+
+-- 3
+select empno, ename, hiredate, hiredate
+from emp;
+
+-- 4
+select empno, ename, nvl(to_char(mgr), ' ') as mgr,
+    case
+        when to_char(mgr) is null then '0000'
+        when to_char(substr(mgr,1,2)) = '75' then '5555'
+        when to_char(substr(mgr,1,2)) = '76' then '6666'
+        when to_char(substr(mgr,1,2)) = '77' then '7777'
+        when to_char(substr(mgr,1,2)) = '78' then '8888'
+        else to_char(mgr)
+    end as CHG_MGR
+from emp;
