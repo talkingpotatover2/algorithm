@@ -25,3 +25,8 @@ select empno, ename, nvl(to_char(mgr), ' ') as mgr,
         else to_char(mgr)
     end as CHG_MGR
 from emp;
+
+
+
+--add_months(hiredate, 3)  --입사일 + 3개월
+--next_day(hiredate, '월요일')  --입사일을 기준으로 돌아오는 요일
