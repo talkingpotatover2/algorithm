@@ -10,8 +10,8 @@ from emp;
 
 -- 3
 select empno, ename, to_char(hiredate, 'yyyy/mm/dd') as hiredate, 
-        to_char(next_day(add_months(hiredate,3), '월요일'), 'yyyy-mm-dd') as R_JOB,
-        nvl(to_char(comm),'N/A') as comm
+       to_char(next_day(add_months(hiredate,3), '월요일'), 'yyyy-mm-dd') as R_JOB,
+       nvl(to_char(comm),'N/A') as comm
 from emp;
 
 -- 4
