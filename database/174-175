@@ -24,6 +24,13 @@ select empno, ename, nvl(to_char(mgr), ' ') as mgr,
         when to_char(substr(mgr,1,2)) = '78' then '8888'
         else to_char(mgr)
     end as CHG_MGR
+--    case
+--        when to_char(mgr) is null then '0000'
+--        when to_char(mgr) = '75%' then '6666'
+--        when to_char(mgr) = '75%' then '7777'
+--        when to_char(mgr) = '75%' then '8888'
+--        else to_char(mgr)
+--    end as CHG_MGR
 from emp;
 
 
