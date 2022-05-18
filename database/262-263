@@ -1,0 +1,43 @@
+-- 1
+select job, empno, ename, sal, e.deptno as deptno, dname
+from emp e, dept d
+where job = (
+                select job
+                from emp
+                where ename = 'ALLEN'
+            )
+and e.deptno = d.deptno;
+
+-- 2
+select empno, ename, dname, to_char(hiredate,'yyyy-mm-dd') as hiredate, loc, sal, grade
+from emp e, dept d, salgrade s
+where sal > (
+                select avg(sal)
+                from emp
+            )
+and e.deptno = d.deptno
+and e.sal between s.losal and s.hisal
+order by sal desc;
+
+-- 3
+select empno, ename, job, e.deptno, dname, loc
+from emp e, dept d
+where e.deptno = d.deptno
+and e.deptno = 10
+and e.job not in (
+                    select job
+                    from emp
+                    where deptno = 30
+                 );
+
+
+-- 4
+select empno, ename, sal, grade
+from emp e, salgrade s
+where e.sal > any (
+                      select max(sal)
+                      from emp
+                      where job = 'SALESMAN'
+                  )
+and e.sal between s.losal and s.hisal
+order by empno;
