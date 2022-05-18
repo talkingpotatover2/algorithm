@@ -19,19 +19,11 @@ order by e.deptno;
 -- 4
 select d.deptno as deptno, d.dname as dname, e.empno as empno, e.ename as ename, e.mgr as mgr, e.sal as sal,
     e.deptno as deptno_1, s.losal as losal, s.hisal as hisal, grade,
-    m.deptno as mgr_empno, m.ename as mgr_ename
-from emp e, dept d, salgrade s, emp m
-where e.deptno(+)=d.deptno and e.sal between s.losal and s.hisal and e.mgr=m.empno(+)
-order by d.deptno, e.empno;
-
-select d.deptno, d.dname, 
-        e.empno, e.ename, e.mgr, e.sal, e.deptno, 
-        s.losal, s.hisal, s.grade, 
-        e2.empno MGR_EMPNO, e2.ename MGR_ENAME
-from emp e left outer join emp e2 
-            on (e.mgr = e2.empno)
+    m.empno as mgr_empno, m.ename as mgr_ename
+from emp e left outer join emp m
+            on (e.mgr = m.empno)
         join salgrade s 
             on (e.sal between s.losal and s.hisal)
-        full outer join dept d 
+        right outer join dept d 
             on (e.deptno = d.deptno)
 order by d.deptno, e.empno;
