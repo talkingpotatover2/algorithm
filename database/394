@@ -1,0 +1,26 @@
+-- 1
+create table dept_const(
+    deptno number(2) constraint deptconst_deptno_pk primary key,
+    dname varchar(14) constraint deptconst_dname_unq unique,
+    loc varchar(13) constraint deptconst_loc_nn not null
+);
+
+-- 2
+create table emp_const(
+    empno number(4),
+    ename varchar(10),
+    job varchar(9),
+    tel varchar(20),
+    hiredate date,
+    sal number(7,2),
+    comm number(7,2),
+    deptno number(2),
+    
+    constraint empconst_empno_pk primary key(empno),
+    constraint empconst_tel_unq unique(tel),
+    constraint empconst_sal_chk check(sal between 1000 and 9999),
+    constraint empconst_deptno_fk foreign key(deptno) references dept_const(deptno)
+);
+
+alter table emp_const
+modify ename constraint empconst_ename_nn not null;
