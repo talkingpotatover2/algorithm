@@ -1,0 +1,43 @@
+-- 1
+create table emp_hw(
+    empno number(4),
+    ename varchar(10),
+    job varchar(9),
+    mgr number(4),
+    hiredate date,
+    sal number(7,2),
+    comm number(7,2),
+    deptno number(2)
+);
+
+-- 2
+alter table emp_hw
+add(bigo varchar(20));
+
+-- 3
+alter table emp_hw
+modify(bigo varchar(30));
+
+-- 4
+alter table emp_hw
+drop column bigo;
+
+alter table emp_hw
+add(remark varchar(30));
+
+-- 5
+drop table emp_hw;
+
+create table emp_hw
+as
+select *
+from emp;
+
+alter table emp_hw
+add(remark varchar(30));
+
+select *
+from emp_hw;
+
+-- 6
+drop table emp_hw;
