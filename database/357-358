@@ -1,0 +1,11 @@
+-- 2
+create table empidx
+as
+select *
+from emp;
+
+create or replace view empidx_over15k
+as
+select empno empno, ename ename, job job, deptno deptno, sal sal, nvl2(comm,'O','X') comm
+from empidx
+where sal > 1500;
