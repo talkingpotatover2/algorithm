@@ -1,0 +1,77 @@
+--
+create table chap10hw_emp
+as
+select * from emp;
+
+create table chap10hw_dept
+as
+select * from dept;
+
+create table chap10hw_salgrade
+as
+select * from salgrade;
+
+-- 1
+insert into chap10hw_dept
+values (50,'ORACLE','BUSAN');
+
+insert into chap10hw_dept
+values (60,'SQL','ILSAN');
+
+insert into chap10hw_dept
+values (70,'SELECT','INCHEON');
+
+insert into chap10hw_dept
+values (80,'DML','BUNDANG');
+
+-- 2
+insert into chap10hw_emp
+values(7201,'TEST_USER1','MANAGER',7788,'2016/01/02',4500,null,50);
+
+insert into chap10hw_emp
+values(7202,'TEST_USER2','CLERK',7201,'2016/02/21',1800,null,50);
+
+insert into chap10hw_emp
+values(7203,'TEST_USER3','ANALYST',7201,'2016/04/01',3400,null,60);
+
+insert into chap10hw_emp
+values(7204,'TEST_USER4','SALESMAN',7201,'2016/05/31',2700,300,60);
+
+insert into chap10hw_emp
+values(7205,'TEST_USER5','CLERK',7201,'2016/07/20',2600,null,70);
+
+insert into chap10hw_emp
+values(7206,'TEST_USER6','CLERK',7201,'2016/09/08',2600,null,70);
+
+insert into chap10hw_emp
+values(7207,'TEST_USER7','LECTURER',7201,'2016/10/28',2300,null,80);
+
+insert into chap10hw_emp
+values(7208,'TEST_USER8','STUDENT',7201,'2018/03/09',1200,null,80);
+
+-- 3
+update chap10hw_emp
+set deptno = 70
+where sal > (
+                select avg(sal)
+                from chap10hw_emp
+                where deptno = 50
+            );
+
+-- 4
+update chap10hw_emp
+set sal = sal * 1.1, deptno = 80
+where hiredate > all (
+                        select max(hiredate)
+                        from chap10hw_emp
+                        where deptno = 60
+                    );
+
+-- 5
+delete from chap10hw_emp
+where empno in (
+                    select e.empno
+                    from chap10hw_emp e, chap10hw_salgrade s
+                    where e.sal between s.losal and s.hisal
+                    and s.grade = 5
+                );
