@@ -1,3 +1,12 @@
+-- 1
+create table empidx
+as
+select *
+from emp;
+
+create index empidx_index
+on empidx(empno);
+
 -- 2
 create table empidx
 as
@@ -9,3 +18,24 @@ as
 select empno empno, ename ename, job job, deptno deptno, sal sal, nvl2(comm,'O','X') comm
 from empidx
 where sal > 1500;
+
+-- 3
+create table deptseq
+as
+select *
+from dept;
+
+create sequence deptseq_seq
+start with 1
+increment by 1
+maxvalue 99
+minvalue 1;
+
+insert into deptseq
+values (deptseq_seq.nextval,'DATABASE','SEOUL');
+
+insert into deptseq
+values (deptseq_seq.nextval,'WEB','BUSAN');
+
+insert into deptseq
+values (deptseq_seq.nextval,'MOBILE','ILSAN');
