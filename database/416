@@ -1,0 +1,35 @@
+-- 1
+create user prev_hw
+identified by orcl;
+
+grant dba
+to prev_hw;
+
+--cmd
+--sqlplus prev_hw/orcl
+
+-- 2(scott)
+grant select
+on emp
+to prev_hw;
+
+grant select
+on dept
+to prev_hw;
+
+grant select
+on salgrade
+to prev_hw;
+
+-- 3(scott)
+revoke select
+on emp
+from prev_hw;
+
+revoke select
+on dept
+from prev_hw;
+
+revoke select
+on salgrade
+from prev_hw;
