@@ -1,0 +1,127 @@
+<!-- https://velog.io/@layssingcar/HTML-%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C -->
+
+<!-- 1번 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML_연습문제_1</title>
+</head>
+<body>
+    <form action="">
+        <p>
+            <label for="name">고객명 :</label>
+            <input type="text" name="name" id="name">
+        </p>
+        <p>
+            <label for="num">전화번호 :</label>
+            <input type="text" name="num" id="num"><br>
+        </p>
+        <p>
+            <label for="mail">E-mail</label>
+            <input type="email" name="mail" id="mail">
+        </p>
+        <p>
+            <label for="pzkind">피자선택:</label>
+            <select name="pzkind" id="pzkind">
+                <option>피자를 선택하세요</option>
+                <option>페퍼로니 피자</option>
+                <option>포테이토 피자</option>
+                <option>직화소불고기 피자</option>
+            </select>
+        </p>
+        <fieldset>
+            <legend>피자 사이즈</legend>
+            <input type="radio" name="size" id="size"> Small <br><br>
+            <input type="radio" name="size" id="size"> Medium <br><br>
+            <input type="radio" name="size" id="size"> Large <br><br>
+        </fieldset>
+        <fieldset>
+            <legend>토핑 선택</legend>
+            <input type="checkbox" name="topping" id="topping"> 베이컨 <br><br>
+            <input type="checkbox" name="topping" id="topping"> 치즈 <br><br>
+            <input type="checkbox" name="topping" id="topping"> 양파 <br><br>
+            <input type="checkbox" name="topping" id="topping"> 버섯 <br><br>
+        </fieldset>
+        <p>
+            <label for="dtime">희망배송시간 :</label>
+            <input type="time">
+        </p>
+        <p>
+            <label for="req">배송시 요청사항:</label>
+            <textarea name="req" id="req" cols="20" rows="4"></textarea>
+        </p>
+        <input type="button" value="주문하기">
+    </form>
+</body>
+</html>
+
+
+
+<!-- 2번 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML_연습문제_2</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>납품자 정보</legend>
+            <ol>
+                <li>
+                    <label for="name">납품자명 :</label>
+                    <input type="text" name="name" id="name">
+                </li><br>
+                <li>
+                    <label for="mail">email :</label>
+                    <input type="email" name="mail" id="mail" placeholder="answer@naver.com">
+                </li><br>
+                <li>
+                    <label for="site">홈페이지 :</label>
+                    <input type="text" name="site" id="site" value="http://">
+                </li><br>
+                <li>
+                    <label for="loc">지역 :</label>
+                <select name="loc" id="loc">
+                    <option>서울</option>
+                    <option selected>부산</option>
+                    <option>인천</option>
+                    <option>대구</option>
+                </select>
+                </li>
+            </ol>
+        </fieldset>
+        <fieldset>
+            <legend>납품 정보</legend>
+            <ul>
+                <li>
+                    <label for="pname">상품명 :</label>
+                    <input type="text" name="pname" id="pname">
+                </li><br>
+                <li>
+                    <label for="pnum">납품수량 :</label>
+                    <input type="text" name="pnum" id="pnum" placeholder="최소 100">
+                </li><br>
+                <li>
+                    <label for="grade">납품등급: </label>
+                    <input type="range" name="grade" id="grade">
+                </li><br>
+                <li>
+                    <label for="issue">기타사항 :</label>
+                    <textarea name="issue" id="issue" cols="20" rows="5"></textarea>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+</body>
+</html>
+
+
+
+<!-- 3번 -->
