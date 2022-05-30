@@ -1,0 +1,57 @@
+-- 1
+set serveroutput on;
+
+begin
+    for i in 1..10 loop
+        if(mod(i,2)=1) then
+            dbms_output.put_line('현재 i의 값: ' || i);
+        end if;
+    end loop;                                                                                
+end;
+/
+
+-- 2
+declare
+    v_deptno dept.deptno%type := 10;  --타입지정과 숫자대입을 함께 해줘야됨..
+    v_dname dept.dname%type;
+begin
+    select dname into v_dname
+    from dept
+    where deptno = v_deptno;
+    
+    dbms_output.put_line('DNAME: ' || nvl(v_dname,'N/A'));
+end;
+/
+
+-- 3
+declare
+    cursor c1 is select empno,ename,job,sal,deptno
+    
+    from emp;
+    vemp emp%rowtype;
+begin
+    open c1;
+    loop
+        fetch c1 into vemp.empno, vemp.ename, vemp.job, vemp.sal, vemp.deptno;
+        exit when c1%notfound;
+        dbms_output.put_line('EMPNO: ' || vemp.empno || ', ENAME: ' || vemp.ename
+        || ', JOB: ' || vemp.job || ', SAL: ' || vemp.sal || ', DEPTNO: ' || vemp.deptno);
+    end loop;
+    close c1;
+end;
+/
+
+declare
+    cursor c2 is select empno,ename,job,sal,deptno
+    from emp;
+    vemp emp%rowtype;
+begin
+    for vemp in c2 loop
+        exit when c2%notfound;
+        dbms_output.put_line('EMPNO: ' || vemp.empno || ', ENAME: ' || vemp.ename
+        || ', JOB: ' || vemp.job || ', SAL: ' || vemp.sal || ', DEPTNO: ' || vemp.deptno);
+    end loop;
+end;
+/
+
+-- 4
