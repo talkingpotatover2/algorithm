@@ -53,3 +53,24 @@ begin
     end loop;
 end;
 /
+
+-- 4
+
+-- 5
+create or replace function func_date_kor(vhiredate emp.hiredate%type)
+    return varchar
+is
+    v_hiredate varchar(30);
+begin
+    select replace(replace(replace(to_char(hiredate,'yyyy-mm,dd!'),'-','년'),',','월'),'!','일')
+            into v_hiredate
+    from emp
+    where hiredate = vhiredate;
+    
+    return v_hiredate;
+end;
+/
+
+select ename, func_date_kor(hiredate) as hiredate
+from emp
+where empno = 7369;
