@@ -55,6 +55,28 @@ end;
 /
 
 -- 4
+create or replace procedure pro_dept_in(vdeptno in dept.deptno%type,
+                                        v_dept out dept%rowtype)
+is
+
+begin
+    select * into v_dept
+    from dept
+    where deptno = vdeptno;
+end;
+/
+
+declare
+    var_dept dept%rowtype;
+    var_deptno dept.deptno%type := 10;
+begin
+    pro_dept_in(var_deptno,var_dept);
+    
+    dbms_output.put_line('부서 번호: ' || var_dept.deptno);
+    dbms_output.put_line('부서 이름: ' || var_dept.dname);
+    dbms_output.put_line('지역: ' || var_dept.loc);
+end;
+/
 
 -- 5
 create or replace function func_date_kor(vhiredate emp.hiredate%type)
