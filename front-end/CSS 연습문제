@@ -173,3 +173,173 @@
     </div>
 </body>
 </html>
+
+
+
+<!-- https://developer-ankiwoong.tistory.com/1182 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header h1{
+            display: inline;
+        }
+
+        nav ul {
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            list-style-type: none;
+        }
+
+        nav ul li a{
+            text-decoration: none;
+            color: black;
+            padding: 20px;
+            letter-spacing: 0.5em;
+        }
+
+        #list {
+            float: left;
+            margin: 0 10px;
+            background-color: antiquewhite;
+            padding: 0 20px;
+            padding-bottom: 20px;
+        }
+
+        #list table {
+            border-collapse: collapse;
+        }
+
+        #list table td {
+            border: 1px solid black;
+            padding: 3px 30px;
+            padding-left: 10px;
+        }
+
+        #main {
+            float: left;
+            background-color: aliceblue;
+            padding: 0 20px;
+            padding-bottom: 20px;
+            padding-right: 200px;
+            margin-right: 10px;
+        }
+
+        #main p {
+            text-align: right;
+            width: 200px;
+            padding-left: 20px;
+        }
+
+        #cart {
+            padding: 0 20px;
+            padding-bottom: 20px;
+            background-color: aquamarine;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        #cart a {
+            color: darkgray;
+            text-decoration: none;
+        }
+
+        #sign {
+            padding: 0 20px;
+            padding-bottom: 20px;
+            background-color: bisque;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        #sign a {
+            color: black;
+            text-decoration: none;
+        }
+
+        #t {
+            float: left;
+            display: block;
+            width: 280px;
+        }
+
+        footer {
+            clear: both;
+            text-align: center;
+        }
+
+        hr {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <img src="img/Vnk5_jfD_400x400.jpg" alt="" width="70px">
+            <h1>Web Shop</h1>
+            <nav>
+                <hr>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">NEWS</a></li>
+                    <li><a href="#">MY ACCOUNT</a></li>
+                    <li><a href="#">CONTACTS</a></li>
+                </ul>
+                <hr>
+            </nav>
+        </header>
+        <section>
+            <article id="list">
+                <h2>카테고리</h2>
+                <table>
+                    <tr><td>컴퓨터</td></tr>
+                    <tr><td>의류</td></tr>
+                    <tr><td>음악</td></tr>
+                    <tr><td>영화</td></tr>
+                    <tr><td>스포츠/레저</td></tr>
+                    <tr><td>가구/인테리어</td></tr>
+                    <tr><td>식품</td></tr>
+                </table>
+            </article>
+            <article id="main">
+                <h1>인테리어</h1>
+                <img src="img/FTQAlhzaMAEaH7D.jpg" alt="" width="230">
+                <p>인테리어 문의는 상담 <br> 내 집같이 잘해드립니다!</p>
+                <input type="button" value="쇼핑카트에 추가하기">
+            </article>
+            <div id="t">
+                <article id="cart">
+                    <h1>Shopping Cart</h1>
+                    <p>현재 쇼핑카트에 물품이 없습니다.</p>
+                    <a href="#">쇼핑카트 보기</a>
+                </article>
+                <article id="sign">
+                    <h1>Log In</h1>
+                    아이디 <br><input type="text" name="id" id="id"> <br>
+                    패스워드 <br><input type="password" name="pw" id="pw">
+                    <br>
+                    <input type="submit" value="로그인">
+                    <input type="reset" value="초기화">
+                    <br>
+                    <a href="#">회원가입</a>
+                    <a href="#">정보분실</a>
+                </article>
+            </div>
+        </section>
+        <footer>
+            <hr>
+            <p>Copyright (c) 2013 Web Sop</p>
+        </footer>
+    </div>
+</body>
+</html>
