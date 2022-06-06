@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body{
+            width: 960px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        
+        .blind {
+            position: absolute;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+        }
+
+        .sidebtn::before{
+            content: ">";
+            position: absolute;
+            left: 0px;
+            display: inline-block;
+            width: 50px;
+            line-height: 50px;
+            font-size: 24px;
+            text-align: center;
+            border: 1px solid black;
+            transition: 0.3s ease-in;
+        }
+        
+        #side:checked + .sidebtn::before {
+            content: "<";
+            left: 400px;
+            transition: 0.3s ease-in;
+        }
+
+        #side:checked ~ .menu {
+            left:0;
+        }
+
+        .menu {
+            position: absolute;
+            left: -410px;
+            top: 0px;
+            bottom: 0;
+            border-right: 1px solid black;
+            width: 400px;
+            font-size: 24px;
+            transition: 0.3s ease-in;
+        }
+
+        .item {
+            display: block;
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid black;
+        }
+
+        div li {
+            list-style-type: none;
+        }
+
+        #item {
+            margin: 30px 30px;
+        }
+
+        #diary {
+            background-color:aliceblue;
+            display: inline-block;
+            border-collapse: collapse;
+        }
+
+        #diary tr th, td{
+            border: 1px solid black;
+        }
+
+        td {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <input type="checkbox" id="side" name="side" class="blind">
+            <label for="side" class="sidebtn"></label>
+            <div class="menu">
+                <li><a href="#" class="item"><div>달력</div></a></li>
+                <li><a href="#" class="item"><div>프로필</div></a></li>
+                <li><textarea name="" id="item" cols="30" rows="10"></textarea></li>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <article>
+            <table id="diary">
+                <tr>
+                    <th>제목: <input type="text"></th>
+                    <th>날짜: <input type="date"></th>
+                    <th>
+                        <input type="checkbox"><img src="" alt="">
+                        <input type="checkbox"><img src="" alt="">
+                        <br><input type="checkbox"><img src="" alt="">
+                        <input type="checkbox"><img src="" alt="">
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <textarea name="" id="" cols="133" rows="10"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </article>
+    </section>
+    <aside>
+
+    </aside>
+    <footer>
+
+    </footer>
+</body>
+</html>
