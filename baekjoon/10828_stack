@@ -1,74 +1,59 @@
-import java.util.Scanner;
+package baekjoon;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Stack;
+import java.util.StringTokenizer;
 
-//시간초과로 실패
-public class StackTest {
-	public static void main(String[] args) {
-		StackCheck stc = new StackCheck();
-		stc.run();
-	}
-}
+public class StackTest2_1 {
 
-class StackCheck{
-	Scanner sc;
-	int x;
-	Stack st;
-	
-	StackCheck(){
-		sc = new Scanner(System.in);
-		this.x = 0;
-		st = new Stack();
-	}
-	
-	void run() {
-		int num = sc.nextInt();  //입력할 횟수
-		for(int i=0; i<num; i++) {
-			String str = sc.next();  //명령 입력
-			if(str.equals("push")) {
-				int x = sc.nextInt();
-				pushX(x);
-			}else if(str.equals("pop")) {
-				pop();
-			}else if(str.equals("size")) {
-				System.out.println(size());
-			}else if(str.equals("empty")) {
-				System.out.println(empty());
-			}else if(str.equals("top")) {
-				top();
+	public static void main(String[] args) throws IOException{
+		// TODO Auto-generated method stub
+		//int num이 0이 될때까지
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int x = 0;
+		Stack st = new Stack();
+		String[] arr = null;
+		
+		int num = Integer.parseInt(br.readLine());  //입력할 횟수
+		while(num != 0) {
+			String str1 = br.readLine();  //명령 입력
+			arr = str1.split(" ", 2);
+			switch(arr[0]) {
+				case "push": 
+					x = Integer.parseInt(arr[1]);
+					st.push(x);
+					break;
+				case "pop": 
+					if(!st.empty()) {
+						System.out.println(st.pop());
+					}else {
+						System.out.println(-1);
+					}
+					break;
+				case "size": 
+					System.out.println(st.size());
+					break;
+				case "empty": 
+					if(st.empty()) {
+						System.out.println(1);
+					}else {
+						System.out.println(0);
+					}
+					break;
+				case "top": 
+					if(!st.empty()) {
+						System.out.println(st.peek());
+					}else {
+						System.out.println(-1);
+					}
+					break;
 			}
+			num--;
 		}
+		br.close();
 	}
-	
-	void pushX(int x) {
-		//입력받은 값을 스트링과 숫자로 분류
-		st.push(x);
-	}
-	
-	void pop() {
-		if(!st.empty()) {
-			System.out.println(st.pop());
-		}else {
-			System.out.println(-1);
-		}
-	}
-	
-	int size() {
-		return st.size();
-	}
-	
-	int empty() {
-		if(st.empty()) {
-			return 1;
-		}else {
-			return 0;
-		}
-	}
-	
-	void top() {
-		if(!st.empty()) {
-			System.out.println(st.peek());
-		}else {
-			System.out.println(-1);
-		}
-	}
+
 }
