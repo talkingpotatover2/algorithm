@@ -1,0 +1,89 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Stack;
+
+public class editor {
+
+	public static void main(String[] args) throws IOException {
+		//1.문자를 입력받아서 스택에 집어넣음
+		//2.커서를 끝에 추가함
+		//3.명령어 입력 횟수를 받음
+		//4.조건에 따라 커서 위치 변경함
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Stack st = new Stack();
+		Stack st2 = new Stack();
+		
+		String str = br.readLine();
+		int num = Integer.parseInt(br.readLine());
+		
+		for(int i=0; i<str.length(); i++) {
+			char c = str.charAt(i);
+			st.push(c);
+		}
+		
+		int c_num = 0;  //커서가 뒤에서 첫번째 위치에 잇음
+		
+		while(num != 0) {
+			String e = br.readLine();
+			String[] edit = e.split(" ", 2);
+			char temp[] = new char[st.size()];
+			switch(edit[0]) {
+				case "L":
+					if(c_num == st.size()) {
+						break;
+					}
+//					for(int i=0; i<c_num+1; i++) {  //커서+글자1개 빼고
+//						temp[i] = (char)st.pop();
+//					}
+//					for(int i=0; i<c_num+1; i++) {  //커서+글자1개 넣고
+//						st.push(temp[i]);
+//					}
+					c_num++;
+					break;
+				case "D":
+					if(c_num == 0) {
+						break;
+					}
+//					for(int i=0; i<c_num+1; i++) {  //커서+글자1개 빼고
+//						temp[i] = (char)st.pop();
+//					}
+//					for(int i=c_num; i>=0; i--) {  //커서+글자1개 넣고
+//						st.push(temp[i]);
+//					}
+					c_num--;
+					break;
+				case "B":
+					if(c_num == st.size()) {
+						break;
+					}
+					for(int i=0; i<c_num+1; i++) {  //커서+글자1개 빼고
+						temp[i] = (char)st.pop();
+					}
+					for(int i=0; i<c_num; i++) {  //커서 넣고
+						st.push(temp[i]);
+					}
+					break;
+				case "P":
+					for(int i=0; i<c_num; i++) {  
+						temp[i] = (char)st.pop();
+					}
+					st.push(edit[1].charAt(0));
+					for(int i=c_num-1; i>=0; i--) {
+						st.push(temp[i]);
+					}
+					break;
+			}
+			num--;
+		}
+		
+		for(int i=st.size()-1; i>=0; i--) {
+			char a = (char)st.pop();
+			st2.push(a);
+		}
+		for(int i=st2.size()-1; i>=0; i--) {
+			System.out.print(st2.pop());
+		}
+	}
+
+}
