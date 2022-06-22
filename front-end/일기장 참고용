@@ -32,6 +32,12 @@
     $("#fs").on("change", function(){
       body.css("font-family", $(this).val());
     });
+
+
+    //③ 글자 색상
+    $("#fc").on("change", function(){
+      body.css("color", $(this).val())
+    })
     
     
   });
@@ -61,6 +67,10 @@
             <option value="magun gothic, '맑은고딕', sans-serif">맑은고딕</option>
             <option value="magun gothic, '맑은고딕', serif">궁서</option>
           </select>
+      </dd>
+      <dt>글자색깔</dt>
+      <dd class="f_color">
+        <input type="color" id="fc" value="#80ff80">
       </dd>
     </dl>
  </div>
