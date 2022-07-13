@@ -12,14 +12,14 @@ public class Josephus {
 		int n = sc.nextInt();
 		int k = sc.nextInt();
 		
-		//»ç¶÷À» ¼ø¼­´ë·Î ³Ö¾îÁÜ
+		//ì‚¬ëŒì„ ìˆœì„œëŒ€ë¡œ ë„£ì–´ì¤Œ
 		for(int i=1; i<=n; i++) {
 			queue.add(i);
 		}
 		
 		System.out.print("<");
 		while(queue.size() != 0) {
-			//k*i-1¼ø¼­´ë·Î Á¦°ÅÇØÁÜ
+			//k*i-1ìˆœì„œëŒ€ë¡œ ì œê±°í•´ì¤Œ
 			for(int i=0; i<k-1; i++) {
 				int temp = queue.get(0);
 				queue.remove();
