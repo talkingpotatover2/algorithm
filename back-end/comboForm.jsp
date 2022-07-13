@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="test1Forward.jsp">  <!-- comboForm.jsp, comboProcess.jsp  -->
+<form action="comboProcess.jsp">  <!-- comboForm.jsp, comboProcess.jsp  -->
 	<h1>검색 엔진 정보 페이지</h1>
 	<h3>검색 엔진을 선택하세요.</h3>
 	<!-- <select name="search" size="1">
