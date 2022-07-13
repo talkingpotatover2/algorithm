@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>For문 예제</h1>
-<form action="test2Jsp.jsp">
+<form action="for.jsp">
 	<label for="number">1부터 더할 end 값: </label>
 	<input type="text" name="number" id="number">
 	<input type="submit" value="확인">
