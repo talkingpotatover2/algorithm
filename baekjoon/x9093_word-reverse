@@ -17,11 +17,14 @@ public class StringReverse {
 			for(int j=text.length()-1; j>=0; j--) {
 				c = text.charAt(j);  //word 글자수마다 전부 charAt 해서 대입
 				//빈칸을 기준으로 단어를 구분해서 뒤집고싶음...
-				st.push(c);  //st에 넣어줌
+				//빈칸 확인하면 st.pop()실행
 				if(c == ' ') {
-					
+					str += st.pop();
+					System.out.print(str + " ");
+					str = "";
+				}else {
+					st.push(c);  //st에 넣어줌
 				}
-				System.out.print(st.pop());
 			}
          
 			num--;
