@@ -19,14 +19,17 @@ public class StringReverse {
 				//빈칸을 기준으로 단어를 구분해서 뒤집고싶음...
 				//빈칸 확인하면 st.pop()실행
 				if(c == ' ') {
-					str += st.pop();
-					System.out.print(str + " ");
+					st.push(str);
 					str = "";
 				}else {
-					st.push(c);  //st에 넣어줌
+					str += c;
 				}
 			}
-         
+			st.push(str);
+			for(int j=0; j<st.size(); j++) {  //논리는 맞는데 갑자기 반복문을 빠져나옴..
+				System.out.print(st.pop() + " ");
+			}
+			
 			num--;
 			
 	         
