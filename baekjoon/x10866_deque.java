@@ -9,7 +9,6 @@ public class Deque {
 		// TODO Auto-generated method stub
 		ArrayDeque<Integer> deque = new ArrayDeque<Integer>();
 		Scanner sc = new Scanner(System.in);
-		int head = 0;
 		
 		//출력횟수 입력받기
 		int num = sc.nextInt();
