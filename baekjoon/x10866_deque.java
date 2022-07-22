@@ -11,7 +11,7 @@ public class Deque {
 		Scanner sc = new Scanner(System.in);
 		int head = 0;
 		
-		//Ãâ·ÂÈ½¼ö ÀÔ·Â¹Þ±â
+		//출력횟수 입력받기
 		int num = sc.nextInt();
 		while(num > 0) {
 			String str = sc.next();
