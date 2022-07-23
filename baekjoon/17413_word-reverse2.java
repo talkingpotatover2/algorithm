@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class WordReverse2 {
-	
+	//https://1-7171771.tistory.com/27
 	static void print(Stack st) {
 		while(!st.empty()) {
 			System.out.print(st.pop());
@@ -12,7 +12,7 @@ public class WordReverse2 {
 	}
 
 	public static void main(String[] args) {
-		Stack st = new Stack();  //´Ü¾î ³Ö¾îÁÙ ½ºÅÃ
+		Stack st = new Stack();  //Â´ÃœÂ¾Ã® Â³Ã–Â¾Ã®ÃÃ™ Â½ÂºÃ…Ãƒ
 		Scanner sc = new Scanner(System.in);
 		
 		String str = sc.nextLine();
