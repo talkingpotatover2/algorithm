@@ -20,7 +20,7 @@ public class editor2 {
 			queue.add(c);
 		}
 		
-		int c_num = queue.size();  //Ä¿¼­°¡ µÚ¿¡¼­ Ã¹¹øÂ° À§Ä¡¿¡ ÀÕÀ½
+		int c_num = queue.size();  //ì»¤ì„œê°€ ë’¤ì—ì„œ ì²«ë²ˆì§¸ ìœ„ì¹˜ì— ì‡ìŒ
 		
 		while(num != 0) {
 			String e = br.readLine();
@@ -44,7 +44,7 @@ public class editor2 {
 						break;
 					}
 					for(int i=0; i<c_num; i++) {
-						temp[i] = queue.poll(); //ÀÌ·¸°Ô ÇÏ¸é ¸Ç¾Õ¿¡ÀÖ´ø°Ô µÚ·Î °¡¼­ ¾ÈµÊ...
+						temp[i] = queue.poll(); //ì´ë ‡ê²Œ í•˜ë©´ ë§¨ì•ì—ìˆë˜ê²Œ ë’¤ë¡œ ê°€ì„œ ì•ˆë¨...
 					}
 					for(int i=0; i<c_num-1; i++) {
 						queue.add(temp[i]);
